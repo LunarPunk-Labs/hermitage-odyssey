@@ -1,46 +1,41 @@
  <div class="col-md-9" style="margin: auto;">
-  <div style="color:red">{{errorMessage}}</div>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <section class="post-footer-comment-wrapper">
-          <img
-            class="photo-profile"
-            src="../assets/img/avatar_placeholder.jpg"
-            width="140"
-            height="140"
-            alt="..."
-          />
-          <table class="table">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">(0)</th>
-                <th scope="col"><select (change)="switch_persona($event)">
-                  <option *ngFor="let p of (personalist | async)" [ngValue]="p.id">{{p.name}}</option>
-                </select></th>
-                <th scope="col">edit</th>
-              </tr> 
-            </thead>
-           
-            <tbody>
-              <h2>Profiles</h2>
-                <tr *ngFor="let p of (profilelist | async)">
-                  <td scope="row"><a routerLink="/profile/{{ p.id }}" routerLinkActive="active">
-                  {{p.application_name}}</a></td>
-                </tr>
-            </tbody>
-          </table>
-          <br />
-        </section>
-        <section class="post-footer-comment-wrapper">
-          <table class="table">
-              <tr>
-                <th>Me</th>
-                <th >People</th>
-                <th>things</th>
-              </tr>
-          </table>
-          <br />
-        </section>
-      </div>
-    </div>
-  </div>
+   <div style="color:red">{{errorMessage}}</div>
+   <div class="panel panel-default">
+     <div class="panel-body">
+       <section class="post-footer-comment-wrapper">
+         <img class="photo-profile rounded-circle mb-4" src="../assets/img/avatar_placeholder.jpg" width="140"
+           height="140" alt="..." />
+         <table class="table">
+           <thead class="thead-light">
+             <tr>
+               <th scope="col">(0)</th>
+               <th scope="col"><select class="custom-select" (change)="switch_persona($event)">
+                   <option *ngFor="let p of (personalist | async)" [ngValue]="p.id">{{p.name}}</option>
+                 </select></th>
+               <th scope="col">edit</th>
+             </tr>
+           </thead>
+
+           <tbody>
+             <h2>Profiles</h2>
+             <tr *ngFor="let p of (profilelist | async)">
+               <td scope="row"><a routerLink="/profile/{{ p.id }}" routerLinkActive="active">
+                   {{p.application_name}}</a></td>
+             </tr>
+           </tbody>
+         </table>
+         <br />
+       </section>
+       <section class="post-footer-comment-wrapper">
+         <table class="table">
+           <tr>
+             <th>Me</th>
+             <th>People</th>
+             <th>things</th>
+           </tr>
+         </table>
+         <br />
+       </section>
+     </div>
+   </div>
+ </div>
