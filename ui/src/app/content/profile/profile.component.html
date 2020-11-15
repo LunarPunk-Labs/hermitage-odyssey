@@ -97,11 +97,15 @@
                           {{ inputFields[i] }}
                         </td>
                         <td>
-                          <input type="text" value="{{ formArr.value[i] }}" />
+                          <input
+                            class="form-control"
+                            type="text"
+                            value="{{ formArr.value[i] }}"
+                          />
                         </td>
                         <td>{{ visibility[i] }}</td>
                         <td>
-                          <select>
+                          <select class="custom-select">
                             <option *ngFor="let p of personas" [ngValue]="p">
                               {{ p }}
                             </option>
@@ -152,11 +156,15 @@
                           {{ inputFields[i] }}
                         </td>
                         <td>
-                          <input type="text" value="{{ formArr.value[i] }}" />
+                          <input
+                            class="form-control"
+                            type="text"
+                            value="{{ formArr.value[i] }}"
+                          />
                         </td>
                         <td>{{ visibility[i] }}</td>
                         <td>
-                          <select>
+                          <select class="custom-select">
                             <option *ngFor="let p of personas" [ngValue]="p">
                               {{ p }}
                             </option>
