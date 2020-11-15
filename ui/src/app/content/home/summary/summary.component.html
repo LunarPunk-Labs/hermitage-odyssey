@@ -24,7 +24,7 @@
             <tbody>
               <h2>Profiles</h2>
                 <tr *ngFor="let p of (profilelist | async)">
-                  <td scope="row"><a routerLink="/profile/{{ p.id }}" routerLinkActive="active">
+                  <td scope="row"><a routerLink="/profile/{{ p.id }}/edit" routerLinkActive="active">
                   {{p.application_name}}</a></td>
                 </tr>
             </tbody>

@@ -5,14 +5,9 @@
         <div class="login-form">
           <form [formGroup]="profileForm" (ngSubmit)="signUp()">
             <label style="color:red">{{errorMessage}}</label>
-            <input *ngIf="!(registered | async)" type="text" placeholder="handle" formControlName="handle" />
-            <input *ngIf="!(registered | async) as boolean"
-              type="text"
-              placeholder="Avatar Link"
-              formControlName="avatar"
-            />
+            <input *ngIf="!(registered | async)" type="text" placeholder="password" formControlName="handle" />
             <button *ngIf="!(registered | async) as boolean">
-              Skip
+              Authenticate
             </button>
           </form>
           <button *ngIf="(registered | async) as boolean" (click)="setAndRoute()">
