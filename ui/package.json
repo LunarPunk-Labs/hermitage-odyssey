@@ -7,7 +7,7 @@
   "author": "nphias",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration=mock",
     "mock": "ng serve --configuration=mock",
     "build": "ng build",
     "buildproduction": "ng build --configuration=production",

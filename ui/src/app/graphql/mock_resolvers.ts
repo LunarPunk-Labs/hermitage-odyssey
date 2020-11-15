@@ -62,7 +62,24 @@ export const mock_resolvers = {
           schema: "{}",
           persona: "personal",
           value: "Josh"
-        }]})
+        }]},{uuid:"chujefhk2342sdsdsd34wefwef",
+        name: "profile1",
+        application_name: "Instagram",
+        app_hash: "my hash",
+        expiry: 0,
+        enabled: true,
+        fields: [{
+          uuid: "aUUID",
+          name: "myname",
+          display_name: "display",
+          required: true,
+          description: "test",
+          access: AccessType.STORE,
+          schema: "{}",
+          persona: "personal",
+          value: "Josh"
+        }]
+      })
       return array
     }
   },

@@ -9,11 +9,10 @@
           <div class="card-body ">
             <div class="text-danger mb-2">{{errorMessage}}</div>
             <div class="form-group">
-              <input class="form-control" *ngIf="!(registered | async)" type="text" placeholder="Handle"
+              <input class="form-control" *ngIf="!(registered | async)" type="text" placeholder="password"
                 formControlName="handle" />
             </div>
-            <input class="form-control" *ngIf="!(registered | async) as boolean" type="text" placeholder="Avatar Link"
-              formControlName="avatar" />
+
           </div>
           <div class="card-footer">
             <button class="btn btn-primary btn-block btn-lg" *ngIf="!(registered | async) as boolean">
