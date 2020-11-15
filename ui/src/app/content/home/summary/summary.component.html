@@ -13,11 +13,13 @@
           <table class="table">
             <thead class="thead-light">
               <tr>
-                <th scope="col">(0)</th>
+                <th scope="col">Personas:</th>
                 <th scope="col"><select (change)="switch_persona($event)">
                   <option *ngFor="let p of (personalist | async)" [ngValue]="p.id">{{p.name}}</option>
                 </select></th>
-                <th scope="col">edit</th>
+                <th scope="col">filter: <select (change)="filter($event)">
+                  <option *ngFor="let f of filterlist" [ngValue]="f">{{f}}</option>
+                </select></th>
               </tr> 
             </thead>
            
@@ -32,13 +34,6 @@
           <br />
         </section>
         <section class="post-footer-comment-wrapper">
-          <table class="table">
-              <tr>
-                <th>Me</th>
-                <th >People</th>
-                <th>things</th>
-              </tr>
-          </table>
           <br />
         </section>
       </div>
