@@ -2,28 +2,32 @@
 
 <div id="wrapper">
   <!-- Sidebar -->
-  <div class="text-secondary bg-dark px-4 block-pt-48" style="min-width: 15rem; top:9rem;">
-
+  <div
+    class="text-secondary bg-dark px-4 block-pt-48"
+    style="min-width: 15rem; top: 9rem"
+  >
     <ul class="sidebar navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" routerLink="/home" routerLinkActive="active">
-          <i class="fas fa-home"></i>
+          <i class="fas fa-fw fa-user-circle mr-2"></i>
           <span>Me</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/persona" routerLinkActive="active">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Personas</span></a>
+          <i class="fas fa-fw fa-certificate mr-2"></i>
+          <span>Personas</span></a
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="logout()">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Logout</span></a>
+          <i class="fas fa-fw fa-key mr-2"></i>
+          <span>Logout</span></a
+        >
       </li>
     </ul>
   </div>
-  <div id="content-wrapper">
+  <div id="content-wrapper" class="d-flex flex-column w-100 block-mt-36">
     <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
@@ -35,16 +39,18 @@
 
       <!-- new data -->
       <div *ngIf="!editing">
-        <div class="col-md-9" style="margin: auto;">
+        <div class="col-md-9" style="margin: auto">
           <div class="panel panel-default">
             <div class="panel-body">
               <section class="post-heading">
                 <div class="row">
                   <div class="col-md-11">
-                    <div style="color:red">{{errorMessage}}</div>
+                    <div style="color: red">{{ errorMessage }}</div>
                     <div class="media">
                       <div class="media-left">
-                        <h4 class="media-heading">HCalendar is requesting field data...</h4>
+                        <h4 class="media-heading">
+                          HCalendar is requesting field data...
+                        </h4>
                       </div>
                     </div>
                   </div>
@@ -53,7 +59,9 @@
               <section class="post-body">
                 <br />Choose or create a persona for the application:
                 <select>
-                  <option *ngFor="let p of personas" [ngValue]="p">{{p}}</option>
+                  <option *ngFor="let p of personas" [ngValue]="p">
+                    {{ p }}
+                  </option>
                 </select>
               </section>
 
@@ -63,13 +71,17 @@
         </div>
         <br />
 
-        <div class="col-md-12" style="margin: auto;">
-          <div style="color:red">{{errorMessage}}</div>
+        <div class="col-md-12" style="margin: auto">
+          <div style="color: red">{{ errorMessage }}</div>
           <div class="panel panel-default">
             <div class="panel-body">
-              <form class="form" *ngIf="formArr.controls" [formGroup]="appfields" (ngSubmit)="sendData()">
+              <form
+                class="form"
+                *ngIf="formArr.controls"
+                [formGroup]="appfields"
+                (ngSubmit)="sendData()"
+              >
                 <section class="post-footer-comment-wrapper">
-
                   <table class="table">
                     <thead class="thead-light">
                       <tr>
@@ -80,19 +92,32 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item of inputFields; let i=index;">
-                        <td class="thead-light" scope="row">{{inputFields[i]}}</td>
-                        <td><input type="text" value="{{formArr.value[i]}}" /></td>
-                        <td>{{visibility[i]}}</td>
-                        <td><select>
-                            <option *ngFor="let p of personas" [ngValue]="p">{{p}}</option>
-                          </select></td>
+                      <tr *ngFor="let item of inputFields; let i = index">
+                        <td class="thead-light" scope="row">
+                          {{ inputFields[i] }}
+                        </td>
+                        <td>
+                          <input
+                            class="form-control"
+                            type="text"
+                            value="{{ formArr.value[i] }}"
+                          />
+                        </td>
+                        <td>{{ visibility[i] }}</td>
+                        <td>
+                          <select class="custom-select">
+                            <option *ngFor="let p of personas" [ngValue]="p">
+                              {{ p }}
+                            </option>
+                          </select>
+                        </td>
                       </tr>
                     </tbody>
-
                   </table>
                 </section>
-                <button type="submit" class="btn btn-primary">Return Data to App</button>
+                <button type="submit" class="btn btn-primary">
+                  Return Data to App
+                </button>
               </form>
               <br />
             </div>
@@ -105,13 +130,17 @@
         <div class="media-left">
           <h4 class="media-heading">View/Edit Profile</h4>
         </div>
-        <div class="col-md-12" style="margin: auto;">
-          <div style="color:red">{{errorMessage}}</div>
+        <div class="col-md-12" style="margin: auto">
+          <div style="color: red">{{ errorMessage }}</div>
           <div class="panel panel-default">
             <div class="panel-body">
-              <form class="form" *ngIf="formArr.controls" [formGroup]="appfields" (ngSubmit)="sendData()">
+              <form
+                class="form"
+                *ngIf="formArr.controls"
+                [formGroup]="appfields"
+                (ngSubmit)="sendData()"
+              >
                 <section class="post-footer-comment-wrapper">
-
                   <table class="table">
                     <thead class="thead-light">
                       <tr>
@@ -122,16 +151,27 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item of inputFields; let i=index;">
-                        <td class="thead-light" scope="row">{{inputFields[i]}}</td>
-                        <td><input type="text" value="{{formArr.value[i]}}" /></td>
-                        <td>{{visibility[i]}}</td>
-                        <td><select>
-                            <option *ngFor="let p of personas" [ngValue]="p">{{p}}</option>
-                          </select></td>
+                      <tr *ngFor="let item of inputFields; let i = index">
+                        <td class="thead-light" scope="row">
+                          {{ inputFields[i] }}
+                        </td>
+                        <td>
+                          <input
+                            class="form-control"
+                            type="text"
+                            value="{{ formArr.value[i] }}"
+                          />
+                        </td>
+                        <td>{{ visibility[i] }}</td>
+                        <td>
+                          <select class="custom-select">
+                            <option *ngFor="let p of personas" [ngValue]="p">
+                              {{ p }}
+                            </option>
+                          </select>
+                        </td>
                       </tr>
                     </tbody>
-
                   </table>
                 </section>
                 <button type="submit" class="btn btn-primary">Save</button>
@@ -141,7 +181,6 @@
           </div>
         </div>
       </div>
-
     </div>
     <!-- /.container-fluid -->
   </div>
