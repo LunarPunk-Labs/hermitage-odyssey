@@ -52,6 +52,7 @@ export class ProfileComponent implements OnInit {
 
   sendData(){
     console.log(this.appfields.getRawValue())
+    this.router.navigate(["home/"]);
   }
 
   logout(){
